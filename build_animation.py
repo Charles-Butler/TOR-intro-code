@@ -11,7 +11,9 @@ def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
 
 def logging_info(message):
-    print(f"{Fore.CYAN}{message}{Style.RESET_ALL}\n")
+    print(f"{Fore.WHITE}{'=' * 50}{Style.RESET_ALL}")
+    print(f"{Fore.BLUE}       TASK: {message}{Style.RESET_ALL}")
+    print(f"{Fore.WHITE}{'=' * 50}{Style.RESET_ALL}\n")
     sys.stdout.flush()
     time.sleep(random.uniform(0.5, 1.5))  # Random delay between 0.5s - 1.5s
 
@@ -23,9 +25,9 @@ def simulate_compilation():
         "Verifying bytecode...", "Resolving symbols...", "Building assets...",
         "Allocating memory...", "Registering components..."
     ]
-    print(f"{Fore.MAGENTA}Compiling...{Style.RESET_ALL}\n")
+    print(f"{Fore.YELLOW}Compiling...{Style.RESET_ALL}\n")
     for _ in range(30):
-        print(f"{Fore.MAGENTA}{random.choice(pseudo_methods)}{Style.RESET_ALL}")
+        print(f"{Fore.YELLOW}{random.choice(pseudo_methods)}{Style.RESET_ALL}")
         time.sleep(random.uniform(0.05, 0.15))
     print("\n")
 
@@ -54,11 +56,11 @@ def flashing_build_complete(message="BUILD SUCCESSFUL", flashes=3):
     """Flashes the build complete message before final output."""
     for _ in range(flashes):
         clear_screen()
-        print(f"{Fore.GREEN}{Style.BRIGHT}{message}{Style.RESET_ALL}")
+        print(f"{Fore.GREEN}{Style.BRIGHT}\n{'=' * 50}\n       *** BUILD COMPLETE ***\n{'=' * 50}{Style.RESET_ALL}")
         time.sleep(0.5)
         clear_screen()
         time.sleep(0.5)
-    print(f"{Fore.GREEN}{Style.BRIGHT}{message}{Style.RESET_ALL}\n")
+    print(f"{Fore.GREEN}{Style.BRIGHT}\n{'=' * 50}\n       *** BUILD COMPLETE ***\n{'=' * 50}{Style.RESET_ALL}\n")
 
 def simulate_gradle_build():
     clear_screen()
@@ -66,19 +68,12 @@ def simulate_gradle_build():
     
     build_steps = [
         "Starting a Gradle Daemon...",
-        "==================================================",
         "Configuring build...",
-        "==================================================",
         "Resolving dependencies...",
-        "==================================================",
         "Compiling source code...",
-        "==================================================",
         "Running tests...",
-        "==================================================",
         "Assembling outputs...",
-        "==================================================",
         "Generating build reports...",
-        "==================================================",
         "Finalizing build...",
     ]
     
