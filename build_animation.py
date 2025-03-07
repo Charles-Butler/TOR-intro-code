@@ -12,10 +12,10 @@ def clear_screen():
 
 def logging_info(message):
     print(f"{Fore.WHITE}{'=' * 50}{Style.RESET_ALL}")
-    print(f"{Fore.BLUE}       TASK: {message}{Style.RESET_ALL}")
-    print(f"{Fore.WHITE}{'=' * 50}{Style.RESET_ALL}\n")
+    print(f"{Fore.CYAN}       TASK: {message}{Style.RESET_ALL}")
+    print(f"{Fore.YELLOW}{'=' * 50}{Style.RESET_ALL}\n")
     sys.stdout.flush()
-    time.sleep(random.uniform(0.5, 1.5))  # Random delay between 0.5s - 1.5s
+    time.sleep(random.uniform(0.5, 1.5))
 
 def simulate_compilation():
     """Emulates fast-loading compilation with pseudo methods and dependencies."""
@@ -23,16 +23,20 @@ def simulate_compilation():
         "Loading module...", "Parsing syntax...", "Optimizing loops...",
         "Linking libraries...", "Checking dependencies...", "Inlining functions...",
         "Verifying bytecode...", "Resolving symbols...", "Building assets...",
-        "Allocating memory...", "Registering components..."
+        "Allocating memory...", "Registering components...",
+        "Refactoring Spidey’s Web...", "Initializing the Batcave...", "Rendering Hyrule Castle...",
+        "Compiling Batarangs...", "Unlocking hidden cheat codes...", "Deploying a Hadouken...",
+        "Hashing Infinity Stones...", "Generating speed force energy...", "Building the Master Sword...",
+        "Importing the One Ring...", "Decrypting Raccoon City logs...", "Refactoring Kratos’ anger management..."
     ]
     print(f"{Fore.YELLOW}Compiling...{Style.RESET_ALL}\n")
     for _ in range(30):
-        print(f"{Fore.YELLOW}{random.choice(pseudo_methods)}{Style.RESET_ALL}")
+        print(f"{Fore.MAGENTA}{random.choice(pseudo_methods)}{Style.RESET_ALL}")
         time.sleep(random.uniform(0.05, 0.15))
     print("\n")
 
 def simulate_tests():
-    """Simulates fake test results with random logging before pass messages."""
+    """Simulates fake test results with random logging before pass messages, including puns."""
     test_cases = [
         "Test 1 - Initialization", "Test 2 - API Connection", "Test 3 - Data Validation",
         "Test 4 - User Authentication", "Test 5 - Performance Benchmark",
@@ -41,7 +45,11 @@ def simulate_tests():
     test_logs = [
         "Checking memory allocation...", "Verifying API response times...",
         "Validating encryption algorithms...", "Simulating user load...",
-        "Ensuring data integrity...", "Checking network latency..."
+        "Ensuring data integrity...", "Checking network latency...",
+        "Asking Batman for debugging help...", "Testing Spider-Man’s sticky situations...",
+        "Verifying if Mario can jump over the firewall...", "Ensuring Hulk doesn't smash the database...",
+        "Checking if Sonic is fast enough for the API calls...", "Making sure Kratos doesn’t rage-quit...",
+        "Ensuring Gandalf doesn’t let anyone pass security..."
     ]
     print(f"{Fore.YELLOW}Running Tests...{Style.RESET_ALL}\n")
     for test in test_cases:
