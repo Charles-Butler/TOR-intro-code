@@ -2,8 +2,8 @@ import time
 import sys
 import random
 import os
-import colorama # type: ignore
-from colorama import Fore, Style # type: ignore
+import colorama
+from colorama import Fore, Style
 
 colorama.init()
 
@@ -11,7 +11,14 @@ def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
 
 def logging_info(message):
-    print(f"{Fore.CYAN}[INFO] {message}{Style.RESET_ALL}")
+    separator = "=" * 40
+    boxed_message = f"* {message} *"
+    padding = "*" * len(boxed_message)
+    print(f"{Fore.YELLOW}{separator}{Style.RESET_ALL}")
+    print(f"{Fore.CYAN}{padding}{Style.RESET_ALL}")
+    print(f"{Fore.CYAN}{boxed_message}{Style.RESET_ALL}")
+    print(f"{Fore.CYAN}{padding}{Style.RESET_ALL}")
+    print(f"{Fore.YELLOW}{separator}{Style.RESET_ALL}")
     sys.stdout.flush()
     time.sleep(random.uniform(0.5, 1.5))  # Random delay between 0.5s - 1.5s
 
@@ -21,12 +28,19 @@ def simulate_gradle_build():
     
     build_steps = [
         "Starting a Gradle Daemon...",
+        "===============================",
         "Configuring build...",
+        "===============================",
         "Resolving dependencies...",
+        "===============================",
         "Compiling source code...",
+        "===============================",
         "Running tests...",
+        "===============================",
         "Assembling outputs...",
+        "===============================",
         "Generating build reports...",
+        "===============================",
         "Finalizing build...",
     ]
     
